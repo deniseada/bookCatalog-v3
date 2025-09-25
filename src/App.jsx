@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Books from "./book";
+import "./index.css";
+import data from "./data/books.json";
+import AddBookForm from "./components/AddBookForm";
+import Modal from "./components/Modal";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function renderBook(book, index) {
+  return <Books {...book} key={index} />;
 }
 
-export default App
+function App() {
+  return (
+    <div className="container">
+      <h1>Book Catalog</h1>
+      <div className="bookContainers">
+        <Modal btnLabel="+" btnClassName="btn-plus">
+          <AddBookForm />
+        </Modal>
+        <div className="books">{data.map(renderBook)}</div>
+      </div>
+      <footer> @ 2025 Denise Aquino</footer>
+    </div>
+  );
+}
+
+export default App;

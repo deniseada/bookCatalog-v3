@@ -1,68 +1,173 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+html {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: rgb(102, 143, 143);
+  color: rgb(192, 210, 210);
 }
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 2px 8px #00000040;
+  background: #0b4370;
+  margin-top: 0px;
+  padding: 0.5em 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* BOOK */
+
+.book-price {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  background: #31303080;
+}
+
+.book {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  padding: 0.4rem;
+  border: 2px solid;
+  background-color: rgb(30, 73, 84);
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 2em;
+}
+
+.book-bg {
+  background-color: rgb(132, 164, 175);
+}
+
+.book-image {
+  width: 100%;
+  object-fit: cover;
+  box-sizing: inherit;
+  display: block;
+}
+
+.bookContainers {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 200px auto;
+}
+
+.book-link {
+  display: block;
+  height: 2rem;
+  width: 100%;
+  background: #344769;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-decoration: none;
+  color: #f1f1f1;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 0.25rem;
+}
+.book-link:hover {
+  background-color: rgb(139, 209, 209);
+  color: black;
+}
+
+/* DELETE BOOK */
+
+.delete-book {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  background: #d71f53;
+  color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* PLUS BUTTON */
+
+.btn-plus {
+  position: relative;
+  font-size: 4rem;
+  width: 200px;
+  height: 300px;
+  margin-left: 0.5em;
+  background-color: transparent;
+  cursor: pointer;
+  border: 3px solid #dfdbdb;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f1f1f1;
+}
+
+.btn-plus:hover {
+  background-color: rgb(122, 177, 177);
+}
+
+/* FORM */
+
+.form-container {
+  padding: 1rem;
+  color: black;
+  display: block;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+  padding: 0.5em 1em;
+}
+
+dialog::backdrop {
+  background: #38383880;
+  backdrop-filter: blur(10px);
+}
+
+label {
+  padding-left: em;
+}
+
+.btn-save {
+  justify-content: center;
+  margin: 0 auto;
+  display: block;
+  padding: 0.5em 2em;
+  background-color: rgb(52, 184, 91);
+  color: white;
+  text-transform: uppercase;
+}
+
+input[value] {
+  color: gray;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: #262b31;
+  color: white;
+  text-align: center;
+  padding: 2em;
+  margin-top: 2rem;
 }
