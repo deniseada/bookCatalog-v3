@@ -18,6 +18,7 @@ function App() {
         </Modal>
         <div className="books">{data.map(renderBook)}</div>
       </div>
+
       <footer> @ 2025 Denise Aquino</footer>
     </div>
   );
